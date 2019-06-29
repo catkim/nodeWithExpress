@@ -1,4 +1,5 @@
 var express = require('express');
+var message = require('./lib/messages.js')
 
 var app = express();
 
@@ -12,7 +13,7 @@ app.use(express.static(__dirname + '/public'));
 //routes:
 //homepage
 app.get('/', function(req, res){
-  res.render('home');
+  res.render('home', {message: message.getMessage});
 });
 
 //about
